@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* === SURFACE === */
+  --surface-dark: #0B0F0E;
+  --surface-dark-card: #131917;
+  --surface-light: #F4F6F5;
+  --surface-light-card: #FFFFFF;
+  --surface-nav: rgba(11, 15, 14, 0.85);
+
+  /* === ACCENT — GREEN (same as main site) === */
+  --accent: #3ABF5E;
+  --accent-dark: #2B9A49;
+  --accent-subtle: rgba(58, 191, 94, 0.08);
+  --accent-badge-bg: rgba(58, 191, 94, 0.1);
+  --accent-badge-border: rgba(58, 191, 94, 0.25);
+  --accent-glow: rgba(58, 191, 94, 0.2);
+
+  /* === ORANGE CTA (brand Jacó) === */
+  --cta: #E87C3E;
+  --cta-hover: #d66f36;
+
+  /* === TEXT === */
+  --text-dark: #0B0F0E;
+  --text-dark-secondary: #4A5B54;
+  --text-light: #FFFFFF;
+  --text-light-secondary: #94A3B0;
+
+  /* === BORDERS === */
+  --border-light: rgba(0, 0, 0, 0.06);
+  --border-dark: rgba(255, 255, 255, 0.08);
+
+  /* === GEOMETRY === */
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-dark);
+  background: var(--surface-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* === MARQUEE === */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* === TEXT GRADIENT === */
+.text-gradient-green {
+  background: linear-gradient(135deg, var(--accent) 0%, #7dd56f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
