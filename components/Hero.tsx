@@ -96,15 +96,12 @@ export default function Hero() {
                     style={{ background: 'linear-gradient(to left, var(--surface-dark), transparent)' }} />
 
                 <div className="flex gap-5 px-8 sm:px-16 overflow-x-auto no-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                    {MACHINES.map((machine, i) => (
-                        <motion.a
+                    {MACHINES.map((machine) => (
+                        <a
                             key={machine.name}
                             href={`${WA_LINK.replace('máquinas%20pesadas', encodeURIComponent(machine.name))}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5 + i * 0.08, duration: 0.4 }}
                             className="flex-shrink-0 w-[240px] sm:w-[260px] rounded-3xl overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
                             style={{ border: '1px solid var(--border-dark)' }}
                         >
@@ -130,7 +127,7 @@ export default function Hero() {
                                     </div>
                                 </div>
                             </div>
-                        </motion.a>
+                        </a>
                     ))}
                 </div>
             </motion.div>
