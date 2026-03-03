@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    assetPrefix: 'https://lp-maquina-rio-jacolocadora.vercel.app',
     images: {
         remotePatterns: [
             {
